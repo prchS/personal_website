@@ -1,0 +1,64 @@
+/* Example styles for components, converted from Tailwind classes */
+
+/* AboutSection */
+.about-section {
+  max-width: 64rem;
+  margin: 0 auto;
+  padding: 6rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  align-items: center;
+}
+@media (min-width: 768px) {
+  .about-section {
+    flex-direction: row;
+  }
+}
+.profile-pic-container {
+  flex-shrink: 0;
+}
+.profile-pic {
+  width: 10rem;
+  height: 10rem;
+  border-radius: 9999px;
+  overflow: hidden;
+  border: 2px solid rgba(245,245,245,0.08);
+}
+.profile-img {
+  object-fit: cover;
+  filter: grayscale(1);
+}
+.about-text {
+  flex: 1;
+  text-align: center;
+}
+@media (min-width: 768px) {
+  .about-text {
+    text-align: left;
+  }
+}
+.about-icon {
+  margin: 0 auto 1rem auto;
+  color: #4fd1c5;
+}
+@media (min-width: 768px) {
+  .about-icon {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+.about-description {
+  font-size: 1.125rem;
+  color: #bbbbbb;
+  max-width: 36rem;
+  margin: 0 auto;
+}
+@media (min-width: 768px) {
+  .about-description {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+/* Add similar blocks for SkillsSection, Footer, ContactSection, PortfolioSection, HeroSection, Header, etc. */ 
