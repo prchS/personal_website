@@ -1,11 +1,19 @@
 "use client";
 import { Typewriter } from 'react-simple-typewriter';
 import "../app/landingpage.css";
+import { motion } from "framer-motion";
+
 export default function HeroSection() {
   return (
-    <section
-      id="home"
-      className="relative flex flex-col items-center justify-center min-h-[70vh] py-24 text-center"
+    <motion.section
+      {...{
+        id: "home",
+        className: "relative flex flex-col items-center justify-center min-h-[70vh] py-24 text-center"
+      }}
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.5 }}
+      transition={{ duration: 0.7, ease: 'easeOut' }}
     >
       {/* Overlay for readability */}
       <div className="absolute inset-0 bg-black/60 pointer-events-none" />
@@ -15,7 +23,7 @@ export default function HeroSection() {
         </h1>
         <div className="text-xl md:text-2xl font-light text-secondary mb-10 h-8">
           <Typewriter
-            words={["Engineer.", "Builder.", "Problem Solver."]}
+            words={["Machine Learning Enthusiast.", "Fullstack Developer.", "Applied AI."]}
             loop={0}
             cursor
             cursorStyle="_"
@@ -31,6 +39,6 @@ export default function HeroSection() {
           View My Work
         </a>
       </div>
-    </section>
+    </motion.section>
   );
 } 

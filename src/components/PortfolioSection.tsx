@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { ExternalLink, Github, Globe, Smartphone, Brain, Code2 } from 'lucide-react';
+import { motion } from "framer-motion";
 
 const filters = [
   { label: 'All', value: 'all' },
@@ -11,35 +12,19 @@ const filters = [
 
 const projects = [
   {
-    name: 'Project Alpha',
-    blurb: 'A modern web app for productivity.',
-    tech: [Globe, Code2],
-    type: 'web',
-    github: '#',
-    live: '#',
+    name: 'Chest X-ray Analysis',
+    blurb: 'AI-powered chest X-ray analysis web app. Built with SvelteKit, Node.js, and Python. Capstone project at McMaster University.',
+    tech: [Brain, Globe, Code2],
+    type: 'ai',
+    github: 'https://github.com/prchS/4ZP6A-capstone',
+    live: 'https://4zp6a-capstone.vercel.app/',
   },
   {
-    name: 'SmartAI',
-    blurb: 'AI-powered assistant for developers.',
+    name: 'Fire Image Classification',
+    blurb: 'Machine learning project for classifying fire vs. non-fire images. Compared CNN, SVM, and KNN.',
     tech: [Brain, Code2],
     type: 'ai',
-    github: '#',
-    live: '#',
-  },
-  {
-    name: 'MobileX',
-    blurb: 'Cross-platform mobile toolkit.',
-    tech: [Smartphone, Code2],
-    type: 'mobile',
-    github: '#',
-    live: '#',
-  },
-  {
-    name: 'OSS Lib',
-    blurb: 'Open source library for everyone.',
-    tech: [Code2],
-    type: 'oss',
-    github: '#',
+    github: 'https://github.com/prchS/Fire-Image-Classification',
     live: '',
   },
 ];
@@ -49,7 +34,16 @@ export default function PortfolioSection() {
   const filtered = filter === 'all' ? projects : projects.filter(p => p.type === filter);
 
   return (
-    <section id="portfolio" className="max-w-5xl mx-auto py-24 px-6">
+    <motion.section
+      {...{
+        id: "portfolio",
+        className: "max-w-5xl mx-auto py-24 px-6"
+      }}
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.5 }}
+      transition={{ duration: 0.7, ease: 'easeOut' }}
+    >
       <h2 className="text-3xl font-heading font-bold mb-10 text-center">Portfolio</h2>
       <div className="flex justify-center gap-3 mb-8 flex-wrap">
         {filters.map(f => (
@@ -88,8 +82,8 @@ export default function PortfolioSection() {
               )}
             </div>
           </div>
-        ))}
+        ))} 
       </div>
-    </section>
+    </motion.section>
   );
 } 
