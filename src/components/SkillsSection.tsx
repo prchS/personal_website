@@ -5,7 +5,7 @@ const skills = [
   // Programming Languages
   { name: 'Python', icon: Code, description: '', group: 'Programming Languages' },
   { name: 'SQL', icon: Database, description: '', group: 'Programming Languages' },
-  { name: 'C', icon: Code, description: '', group: 'Programming Languages' },
+  { name: 'C/C++', icon: Code, description: '', group: 'Programming Languages' },
   { name: 'JavaScript', icon: Code, description: '', group: 'Programming Languages' },
   { name: 'Java', icon: Code, description: '', group: 'Programming Languages' },
   { name: 'HTML/CSS', icon: Globe, description: '', group: 'Programming Languages' },
