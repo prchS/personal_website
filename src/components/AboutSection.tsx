@@ -18,7 +18,7 @@ export default function AboutSection() {
     >
       <div className="absolute inset-0 bg-black/40 pointer-events-none rounded-2xl" />
       <div className="flex-shrink-0 relative z-10">
-        <div className="w-40 h-40 rounded-full overflow-hidden border-2 border-divider shadow-lg">
+{/* <div className="w-40 h-40 rounded-full overflow-hidden border-2 border-divider shadow-lg">
           <Image
             src="/profile-bw.jpg"
             alt="Suhaas profile"
@@ -26,7 +26,7 @@ export default function AboutSection() {
             height={160}
             className="object-cover grayscale"
           />
-        </div>
+        </div> */}
       </div>
       <div className="flex-1 text-center md:text-left relative z-10">
         <User className="mx-auto md:mx-0 text-accent mb-4 drop-shadow" size={32} />
