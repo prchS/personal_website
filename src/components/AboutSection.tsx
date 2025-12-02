@@ -1,5 +1,4 @@
 "use client";
-import Image from 'next/image';
 import { User } from 'lucide-react';
 import type { Engine } from 'tsparticles-engine';
 import { motion } from "framer-motion";
@@ -18,7 +17,7 @@ export default function AboutSection() {
     >
       <div className="absolute inset-0 bg-black/40 pointer-events-none rounded-2xl" />
       <div className="flex-shrink-0 relative z-10">
-{/* <div className="w-40 h-40 rounded-full overflow-hidden border-2 border-divider shadow-lg">
+        {/* <div className="w-40 h-40 rounded-full overflow-hidden border-2 border-divider shadow-lg">
           <Image
             src="/profile-bw.jpg"
             alt="Suhaas profile"
