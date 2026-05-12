@@ -27,6 +27,30 @@ const projects = [
     github: 'https://github.com/prchS/Fire-Image-Classification',
     live: '',
   },
+  {
+    name: 'Personal Portfolio Website',
+    blurb: 'Repository for my personal portfolio website built with Next.js and hosted on Vercel. Showcases my projects and skills.',
+    tech: [Globe, Code2, Github],
+    type: 'web',
+    github: 'https://github.com/prchS/personal_website',
+    live: 'https://suhaasparcha.com/',
+  },
+  {
+    name: 'Script Emo',
+    blurb: 'An ML project that classifies the emotional tone of paragraphs in a given script. Built with Python and scikit-learn. Trained on a custom dataset of movie scripts annotated with emotional labels.',
+    tech: [Brain, Code2],
+    type: 'ai',
+    github: 'https://github.com/prchS/Script-Emo',
+    live: '',
+  },
+  {
+    name: 'SpecificMacro',
+    blurb: 'An open-source automation tool that allows users to create custom clicks and keybinding macros for specific applications that run in the background without interrupting foreground applications. Built with AutoHotkeyV2.',
+    tech: [Code2],
+    type: 'oss',
+    github: 'https://github.com/prchS/SpecificMacro',
+    live: '',
+  }
 ];
 
 export default function PortfolioSection() {
