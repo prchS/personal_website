@@ -30,7 +30,7 @@ export default function AboutSection() {
       <div className="flex-1 text-center md:text-left relative z-10">
         <User className="mx-auto md:mx-0 text-accent mb-4 drop-shadow" size={32} />
         <p className="text-lg text-secondary max-w-xl mx-auto md:mx-0">
-        I'm Suhaas, a 4th-year undergrad at McMaster University with a passion for software development, AI, and machine learning. I'm an advocate for open source and love working on problems that challenge me, whether it's healthcare projects like chest X-ray analysis or building real-time systems for moderation. I'm always looking to learn, collaborate, and turn creative ideas into practical, elegant solutions.
+        I’m Suhaas, a Computer Science graduate from McMaster University focused on machine learning, full stack development, and end-to-end software systems. Within machine learning, I work across deep learning and applied modeling, spanning areas like natural language processing, computer vision, and real-world domains such as healthcare and automation. I enjoy building through the full pipeline, from data processing and model training to deployment and production integration. I’m also interested in automation, scalable systems, and open source collaboration, and I like turning complex ideas into practical, impactful tools.
         </p>
       </div>
     </motion.section>
