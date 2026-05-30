@@ -1,36 +1,125 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Suhaas Portfolio
+
+Github contains personal website, built with Next.js and deployed on Vercel. The site is a single-page experience with animated sections, a project portfolio, and a contact form backed by a server route.
+
+## Features
+
+- Hero section with typewriter text and a call-to-action button
+- About, skills, portfolio, contact, and footer sections
+- Sticky navigation with a mobile menu
+- Animated section reveals powered by Framer Motion
+- Particle background rendered across the app
+- Portfolio filters for browsing projects by category
+- Contact form that sends messages through a server-side Gmail SMTP route
+- Vercel Analytics integration
+
+## Tech Stack
+
+- Next.js App Router
+- TypeScript
+- React
+- Tailwind CSS
+- Framer Motion
+- tsParticles
+- Lucide React icons
+- react-simple-typewriter
+- Nodemailer
+- Vercel Analytics
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+- Node.js 18 or newer
+- npm
+- A Gmail account if you want the contact form to send email
+
+### Install dependencies
+
+```bash
+npm install
+```
+
+### Run locally
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Build for production
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+```
 
-## Learn More
+### Start the production server
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+npm run start
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Lint the project
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+npm run lint
+```
 
-## Deploy on Vercel
+## Environment Variables
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+The contact form uses Gmail SMTP from the server route at [src/app/api/contact/route.ts](src/app/api/contact/route.ts).
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Create a `.env.local` file in the project root with:
+
+```env
+GMAIL_USER=your-email@gmail.com
+GMAIL_APP_PASS=your-gmail-app-password
+```
+
+Notes:
+
+- Use a Gmail App Password, not your regular Gmail password
+- Enable 2-Step Verification on the Gmail account before generating the App Password
+- Set the same variables in Vercel for production deployments
+
+## Contact Form Behavior
+
+The contact form validates name, email, and message before sending a POST request to `/api/contact`.
+
+The server route:
+
+- validates the incoming payload
+- rate limits requests by IP and by email address
+- sends the message to the configured Gmail inbox
+- sets the sender as `replyTo` so replies can go directly to the user
+
+Rate limiting is currently in-memory, so it resets when the server restarts.
+
+## Project Structure
+
+```text
+src/
+├── app/
+│   ├── api/contact/route.ts    # Contact form API route
+│   ├── layout.tsx              # Root layout and analytics
+│   └── page.tsx                # Home page composition
+└── components/
+    ├── Header.tsx
+    ├── HeroSection.tsx
+    ├── AboutSection.tsx
+    ├── SkillsSection.tsx
+    ├── PortfolioSection.tsx
+    ├── ContactSection.tsx
+    ├── Footer.tsx
+    └── ParticlesBackground.tsx
+```
+
+## Sections
+
+- Home: hero with animated typewriter text
+- About: short bio and background
+- Skills: grouped technical skills grid
+- Portfolio: filterable project showcase
+- Contact: message form plus social links
+
